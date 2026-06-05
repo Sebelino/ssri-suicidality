@@ -1,0 +1,31 @@
+# Default: text files use LF in repo
+* text=auto eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Python
+*.py text eol=lf
+
+# R
+*.R text eol=lf
+*.Rmd text eol=lf
+
+# Config / data
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.tsv text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Makefiles must be LF
+Makefile text eol=lf
+
+# Binary files (never touch line endings)
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary

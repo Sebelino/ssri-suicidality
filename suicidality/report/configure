@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo "Usage: ./configure [--icf-dir DIR] [--analysis-dir DIR]"
+  echo ""
+  echo "Options:"
+  echo "  --icf-dir DIR       Directory with iCF output files (default: ../analysis-icf/output)"
+  echo "  --analysis-dir DIR  Directory with main analysis figures (default: ../analysis)"
+  echo ""
+  echo "Example:"
+  echo "  ./configure --icf-dir ../analysis-icf/gitignore/output-backup-tensor7"
+}
+
+ICF_DIR="../analysis-icf/output"
+ANALYSIS_DIR="../analysis"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --icf-dir)
+      ICF_DIR="$2"
+      shift 2
+      ;;
+    --analysis-dir)
+      ANALYSIS_DIR="$2"
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1" >&2
+      usage >&2
+      exit 1
+      ;;
+  esac
+done
+
+cat > config.mk <<EOF
+ICF_DIR = $ICF_DIR
+ANALYSIS_DIR = $ANALYSIS_DIR
+EOF
+
+# Remove cached copies so make re-copies from the new source
+rm -rf figures generated
+
+echo "Configured:"
+echo "  ICF_DIR      = $ICF_DIR"
+echo "  ANALYSIS_DIR = $ANALYSIS_DIR"
+echo ""
+echo "Written to config.mk. Run 'make' to build."

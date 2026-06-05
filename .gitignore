@@ -1,0 +1,26 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+*.Rproj
+*.RData
+*.png
+*.csv
+
+suicidality/analysis/*.pdf
+
+**/Data extraction/output_s2
+**/extraction/output_s2
+suicidality/Documents/
+
+# Diagnostic-script outputs (.R scripts under suicidality/diagnostics/ are
+# tracked; their .rds results are working data and stay local).
+suicidality/diagnostics/*.rds
+
+output/
+
+job_results/
+
+gitignore/
+suicidality/gitignore/

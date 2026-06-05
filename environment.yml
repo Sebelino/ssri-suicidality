@@ -1,0 +1,25 @@
+name: thesis
+channels:
+  - conda-forge
+dependencies:
+  - matplotlib
+  - python=3.11
+  - pyreadr
+  - python-docx
+  - python-graphviz=0.21
+  - r-base
+  - r-boot
+  - r-data.table
+  - r-dbi
+  - r-digest
+  - r-dplyr
+  - r-ggplot2
+  - r-haven
+  - r-here
+  - r-jsonlite
+  - r-patchwork
+  - r-survival
+  - r-tidyr
+  - r-tidyverse
+  - r-vctrs
+  - unixodbc

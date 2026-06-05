@@ -1,0 +1,9 @@
+# Output directories
+output/rds/
+
+# Log directories
+log/
+
+# R workspace
+.RData
+.Rhistory

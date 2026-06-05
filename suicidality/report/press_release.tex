@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=black}
+
+% Pull macros from the same source as the thesis so the headline numbers
+% never drift from what the analysis pipeline actually produced.
+\input{generated/thesis_values}
+\input{generated/icf_values}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\hfill 4 June 2026
+
+\bigskip
+
+{\LARGE\bfseries Young women taking SSRI antidepressants may be at increased risk of suicidal behavior}
+
+\medskip
+
+%{\large Population-wide Swedish registry study of \studyN{} young people identifies
+%sex as the dominant axis of variation in early-period harm.}
+
+%\bigskip
+
+\noindent\textbf{Stockholm, 4 June 2026.} Initiating a selective serotonin
+reuptake inhibitor (SSRI) within 28~days of a first depression diagnosis was
+estimated to raise 12-week suicidal-behavior risk by \ittRD~percentage
+points (95\% CI \ittRDLower, \ittRDUpper) among Swedish young people aged
+6 to 24, with the increase roughly \icfCATEratio$\times$ as large in
+females as in males, according to a new master's thesis from Karolinska
+Institutet.
+
+The analysis followed \studyN{} individuals with a first depression
+diagnosis between 2006 and 2019, drawing on Sweden's national health,
+prescription, and population registers. It used target-trial emulation -- a
+method that derives trial-like causal estimates from observational data --
+together with iterative causal forests, a recently developed
+machine-learning technique that searches for patient subgroups who respond
+differently to treatment.
+
+After adjusting for differences in patient characteristics between those who
+did and did not start treatment, the algorithm discovered a meaningful
+distinction between male and female patients. The estimated 12-week absolute
+risk increase was \icfSGACATE~percentage points in males (95\% CI
+\icfSGACILower, \icfSGACIUpper) and \icfSGBCATE~percentage points in
+females (\icfSGBCILower, \icfSGBCIUpper). Searches across additional
+diagnostic codes and prescription patterns produced no further reproducible
+subgroups.
+
+``The risk increase in the first 12~weeks is small overall, but it is
+significantly larger in female patients than in male patients,'' said Ville
+Sebastian Olsson, the thesis author. ``Sex should be taken into consideration
+when starting one of these drugs, not just age.''
+
+The FDA first issued a black-box warning on SSRIs in 2004 after a
+meta-analysis of pediatric trials found roughly a two-fold higher rate of
+suicidal ideation or attempts in treated children and adolescents. That
+warning stratifies on age, not on sex. The new thesis adds sex as a
+candidate additional axis of caution in a national real-world cohort more
+than two decades after the original trial-based finding.
+
+The thesis emphasizes that the contrast is between starting an SSRI and not
+starting one, not between SSRIs and alternative treatments such as
+psychotherapy. It is also noted that the absolute increase is small (roughly one
+additional event per 100 patients treated over 12~weeks). Replication
+in independent registries, longer follow-up, and an active-comparator
+analysis are listed as the natural next steps.
+
+\medskip
+
+\noindent\textbf{Contact:}\\
+Ville Sebastian Olsson, thesis author\\
+Department of Medical Epidemiology and Biostatistics, Karolinska Institutet\\
+Email: \texttt{ville.sebastian.olsson@ki.se}\\
+
+\section*{Statement on the use of generative AI}
+I used OpenAI ChatGPT to assist in providing feedback on the written text and
+helping me refine it.
+
+\end{document}
